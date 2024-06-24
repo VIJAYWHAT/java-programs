@@ -4,12 +4,12 @@ public class DecimalConversionMain
     public String ToBinary(int number)
     {
         StringBuilder binary = new StringBuilder();
-        int rem=0;
+        int rem = 0;
         while(number > 0)
         {
-            rem=number%2;
-            binary.insert(0,rem);
-            number=number/2;
+            rem = number%2;
+            binary.insert(0, rem);
+            number = number/2;
         }
         return binary.toString();
     }
@@ -18,12 +18,12 @@ public class DecimalConversionMain
     {
 
     StringBuilder octal=new StringBuilder();
-        int rem=0;
+        int rem = 0;
         while(number > 0)
         {
-            rem=number % 8;
+            rem = number % 8;
             octal.insert(0,rem);
-            number=number/8;
+            number = number/8;
         }
         return octal.toString();
     }

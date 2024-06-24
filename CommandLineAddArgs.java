@@ -2,14 +2,14 @@ public class CommandLineAddArgs {
     
     public static void main(String... args){
 
-        System.out.println("Command Line Args");
+        System.out.println("Command Line Argument");
 
         String n1 = args[0];
         String n2 = args[1];
 
         System.out.println("n1 : " + n1 + ", n2 : " + n2);
 
-        String Con = n1 + n2;//Concatenation of string
+        String Con = n1 + n2; //Concatenation of string
 
         System.out.println("Concatenation: " + Con);
 

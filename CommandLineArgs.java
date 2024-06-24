@@ -11,10 +11,10 @@ public class CommandLineArgs{
                 if(ArgsLength > 1){
 
                         String FirstArgs = args[0];
-                        System.out.println("First Name : " + FirstArgs);
+                        System.out.println("First Name: " + FirstArgs);
 
                         String LastArgs = args[ArgsLength-1];
-                        System.out.println("Last Name : "+ LastArgs );
+                        System.out.println("Last Name: "+ LastArgs );
                         
                 }
 
