@@ -1,7 +1,7 @@
 public class DecimalConversionMain
 {
     
-    public static String ToBinary(int number)
+    public String ToBinary(int number)
     {
         StringBuilder binary = new StringBuilder();
         int rem=0;
@@ -14,7 +14,7 @@ public class DecimalConversionMain
         return binary.toString();
     }
 
-    public static String ToOctal(int number)
+    public String ToOctal(int number)
     {
 
     StringBuilder octal=new StringBuilder();

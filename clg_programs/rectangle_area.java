@@ -1,10 +1,11 @@
+package clg_programs;
 import java.util.*;
 
-public class rectagle_area {
+public class rectangle_area {
 
     public static void main(String[] args) {
         
-        rect Calcrect = new rect();
+        rect_area Calcrect = new rect_area();
 
         Scanner s = new Scanner(System.in);
         System.out.print("Enter the length of the rectangle: ");
