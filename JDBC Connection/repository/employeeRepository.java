@@ -92,7 +92,24 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public Iterable<Employee> findAll() {
-        return null;
+         List<Employee> employees = new ArrayList<>();
+        String query = "SELECT id, name, position FROM employee";
+        try(Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query)){
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                Employee employee = new Employee();
+                employee.setId(resultSet.getLong(1));
+                employee.setName(resultSet.getString(2));
+                employee.setPosition(resultSet.getString(3));
+                employees.add(employee);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return employees;
     }
 
     @Override
