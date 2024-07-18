@@ -87,7 +87,7 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public boolean existsById(Long aLong) {
-        return false;
+       return findById(id).isPresent();
     }
 
     @Override
