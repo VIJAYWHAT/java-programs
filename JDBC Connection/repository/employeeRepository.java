@@ -17,7 +17,23 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public <S extends Employee> S save(S entity) {
-        return null;
+        S createdEmployee = null;
+            String query = "INSERT INTO employee (\"name\", \"position\") VALUES (?, ?)";
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+                preparedStatement.setString(1, entity.getName());
+                preparedStatement.setString(2, entity.getPosition());
+                preparedStatement.executeUpdate();
+                ResultSet resultSet = preparedStatement.getGeneratedKeys();
+                if (resultSet.next()) {
+                    long generatedId = resultSet.getLong(1);
+                    System.out.println("New employee created");
+                    createdEmployee = (S) findById(generatedId).get();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return createdEmployee;
     }
 
     @Override
