@@ -135,7 +135,21 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public void deleteById(Long aLong) {
+        String query = "DELETE FROM employee WHERE id = ?";
 
+        try(Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+             preparedStatement.setLong(1, id);
+             if(preparedStatement.executeUpdate() == 1){
+                 System.out.println("Employee id = " + id + " is deleted");
+             }
+             else{
+                 throw new IllegalArgumentException("Invalid ID Cannot Deleted");
+             }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
