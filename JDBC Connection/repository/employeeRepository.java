@@ -119,6 +119,17 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public long count() {
+         String query = "SELECT COUNT(*) FROM employee";
+        try(Connection connection = dataSource.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(query)){
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                return resultSet.getLong(1);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
         return 0;
     }
 
