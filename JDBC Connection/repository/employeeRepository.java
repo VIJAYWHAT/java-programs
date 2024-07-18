@@ -171,8 +171,17 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
         }
     }
 
-    @Override
+   @Override
     public void deleteAll() {
+        String query = "DELETE From employee";
+        try(Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
+            preparedStatement.executeUpdate();
+            System.out.println("All Employee Table Data Was deleted");
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
