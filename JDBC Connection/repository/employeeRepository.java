@@ -154,17 +154,21 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public void delete(Employee entity) {
-
+        deleteById(entity.getId());
     }
 
     @Override
-    public void deleteAllById(Iterable<? extends Long> longs) {
-
+    public void deleteAllById(Iterable<? extends Long> ids) {
+        for(Long id : ids){
+            deleteById(id);
+        }
     }
 
     @Override
     public void deleteAll(Iterable<? extends Employee> entities) {
-
+        for(Employee employee : entities){
+            deleteById(employee.getId());
+        }
     }
 
     @Override
