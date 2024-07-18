@@ -17,7 +17,8 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public <S extends Employee> S save(S entity) {
-        S createdEmployee = null;
+        if(entity.getId() == null) {
+            S createdEmployee = null;
             String query = "INSERT INTO employee (\"name\", \"position\") VALUES (?, ?)";
             try (Connection connection = dataSource.getConnection();
                  PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -34,6 +35,28 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
                 e.printStackTrace();
             }
             return createdEmployee;
+        }
+        else{
+            S updatedEmployee = null;
+            String query = "UPDATE Employee set \"name\" = ?, \"position\" = ? where id = ?";
+            try (Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query)){
+                preparedStatement.setString(1, entity.getName());
+                preparedStatement.setString(2, entity.getPosition());
+                preparedStatement.setLong(3, entity.getId());
+                if(preparedStatement.executeUpdate() == 1){
+                    System.out.println("employee Details Updated");
+                    updatedEmployee = (S) findById(entity.getId()).get();
+                }
+                else{
+                    throw new IllegalArgumentException("Invalid Employee id");
+                }
+            }
+            catch (SQLException e){
+                e.printStackTrace();
+            }
+            return updatedEmployee;
+        }
     }
 
     @Override
