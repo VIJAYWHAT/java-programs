@@ -66,7 +66,23 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public Optional<Employee> findById(Long aLong) {
-        return Optional.empty();
+         String query = "SELECT id, name, position FROM employee WHERE id = ?";
+        Employee employee = null;
+        try(Connection connection = dataSource.getConnection();
+           PreparedStatement preparedStatement = connection.prepareStatement(query);){
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                employee = new Employee();
+                employee.setId(resultSet.getLong(1));
+                employee.setName(resultSet.getString(2));
+                employee.setPosition(resultSet.getString(3));
+            }
+       }
+       catch (SQLException e){
+           e.printStackTrace();
+       }
+        return Optional.ofNullable(employee);
     }
 
     @Override
