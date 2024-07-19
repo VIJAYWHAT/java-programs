@@ -113,8 +113,24 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
     }
 
     @Override
-    public Iterable<Employee> findAllById(Iterable<Long> longs) {
-        return null;
+    public boolean existsById(Long id) {
+
+        String query = "SELECT 1 FROM employee where id = ?";
+        try(Connection connection = dataSource.getConnection();
+        PreparedStatement preparedStatement =  connection.prepareStatement(query)){
+
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
