@@ -86,8 +86,13 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
     }
 
     @Override
-    public boolean existsById(Long aLong) {
-       return findById(id).isPresent();
+    public Iterable<Employee> findAllById(Iterable<Long> ids) {
+
+        List<Employee> employees = new ArrayList<>();
+
+        ids.forEach(id -> findById(id).ifPresent(employees::add));
+
+        return employees;
     }
 
     @Override
