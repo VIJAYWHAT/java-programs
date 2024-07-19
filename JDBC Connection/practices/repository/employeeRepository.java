@@ -1,6 +1,6 @@
 package practices.repository;
 
-import com.techatpark.practices.model.Employee;
+import practices.model.Employee;
 import org.springframework.data.repository.*;
 
 import javax.sql.DataSource;
