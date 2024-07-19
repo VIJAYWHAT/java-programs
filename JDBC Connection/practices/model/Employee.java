@@ -1,4 +1,4 @@
-package model;
+package practices.model;
 
 public class Employee {
 

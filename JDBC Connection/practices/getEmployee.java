@@ -1,3 +1,4 @@
+package practices;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +8,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import model.Employee;
+import practices.model.Employee;
 
 public class getEmployee {
      public static void main(String[] args) throws SQLException {
@@ -18,15 +19,9 @@ public class getEmployee {
         employee.setName("Venkad");
         employee.setPosition("QA");
 
-        long EmployeeId = CreateEmployee(dataSource, employee);
-        System.out.println("Success Inserted " + EmployeeId + " Records");
 
-        Employee employees = getEmployee(dataSource, EmployeeId);
+        Employee employees = getEmployee(dataSource, 1L);
         System.out.println(employees);
-//       List<Employee> employees = getEmployees(dataSource);
-
-
-//        System.out.println(employees);
 
     }
 

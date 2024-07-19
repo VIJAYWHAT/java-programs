@@ -1,4 +1,4 @@
-package com.techatpark.practices.repository;
+package practices.repository;
 
 import com.techatpark.practices.model.Employee;
 import org.springframework.data.repository.*;
