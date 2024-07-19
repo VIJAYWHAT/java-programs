@@ -30,6 +30,11 @@ public class getEmployee {
 
     }
 
+    private static DataSource getDatasource() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDatasource'");
+    }
+
     private static Employee getEmployee(DataSource dataSource, Long id) throws SQLException {
         Connection connection = dataSource.getConnection();
         Employee employee = new Employee();

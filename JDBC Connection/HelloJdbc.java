@@ -1,7 +1,7 @@
 package com.techatpark.practices;
 
-import com.techatpark.practices.model.Employee;
-import com.techatpark.practices.repository.EmployeeRepository;
+import model.Employee;
+import repository.EmployeeRepository;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.sql.DataSource;
