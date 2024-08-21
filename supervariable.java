@@ -1,6 +1,4 @@
-class car{
-    String color = "white";
-}
+class car{ String color = "white"; }
 
 class chevrolet extends car{
     String color = "black";
