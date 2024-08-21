@@ -1,7 +1,10 @@
 class animal{
+
     void eat(){ System.out.println("Eating..."); }
 } 
+
 class cat extends animal{
+
     void eat(){ System.out.println("Eating Fish..."); }
     void sleep(){ System.out.println("Sleeping..."); }
 
@@ -10,7 +13,6 @@ class cat extends animal{
         sleep();
     }
 }
-
 
 public class supermethod {
     public static void main(String... args){

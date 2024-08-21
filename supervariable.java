@@ -1,6 +1,7 @@
 class car{ String color = "white"; }
 
 class chevrolet extends car{
+    
     String color = "black";
 
     void printColor(){
@@ -13,7 +14,9 @@ class chevrolet extends car{
 class supervariable{
 
     public static void main(String[] args){
+
         chevrolet c = new chevrolet();
         c.printColor();
+    
     }
 }
