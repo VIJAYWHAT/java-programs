@@ -10,6 +10,6 @@ class dog extends animal{
 }
 public class superclass {
     public static void main(String[] args) {
-        dog d = new dog();
+        new dog();
     }
 }

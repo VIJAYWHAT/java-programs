@@ -39,7 +39,7 @@ class MessageBot{
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 
-            Thread.sleep(500);
+            Thread.sleep(1000);
             }
         } catch (HeadlessException e) {
             // TODO Auto-generated catch block
