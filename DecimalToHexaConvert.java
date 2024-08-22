@@ -6,6 +6,7 @@ public class DecimalToHexaConvert {
 
         DecimalConversionMain Convert = new DecimalConversionMain();
 
+        @SuppressWarnings("resource")
         Scanner s = new Scanner(System.in);
         System.out.print("Enter a decimal number: ");
         int number = s.nextInt();

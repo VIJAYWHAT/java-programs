@@ -7,13 +7,13 @@ public class DecimalToBinaryConvert
 
     DecimalConversionMain Convert = new DecimalConversionMain();
 
-    Scanner s = new Scanner(System.in);
-    
-    System.out.print("Enter the Number: ");
-    int number = s.nextInt();
+    try (Scanner s = new Scanner(System.in)) {
+        System.out.print("Enter the Number: ");
+        int number = s.nextInt();
 
-    String BinaryNum = Convert.ToBinary(number);
-    System.out.println("Binary of " + number + " is "  + BinaryNum);
+        String BinaryNum = Convert.ToBinary(number);
+        System.out.println("Binary of " + number + " is "  + BinaryNum);
+    }
     }
 
 }

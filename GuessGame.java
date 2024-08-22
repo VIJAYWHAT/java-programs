@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 class GuessGame
 {
+    @SuppressWarnings("resource")
     public static void main(String[] args)
     {
         System.out.println("==================================================");
@@ -13,7 +14,7 @@ class GuessGame
        // System.out.println("Random Value:"+random_number);
         
         System.out.print("please Guess the number between 1 to "+max_value+" :");
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int guess_number=sc.nextInt();
         while(true)
         {

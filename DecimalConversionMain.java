@@ -28,7 +28,7 @@ public class DecimalConversionMain
         return octal.toString();
     }
 
-    public static String ToHexa(int number) {
+    public String ToHexa(int number) {
         int rem;
         int temp = number;
         StringBuilder hexaDec = new StringBuilder();
