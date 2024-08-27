@@ -20,7 +20,7 @@ class NumConversion
                 octal = Convert.ToOctal(number);
                 System.out.println("Octal of " + number + " is : " + octal);
             
-                hexadecimal = DecimalConversionMain.ToHexa(number);
+                hexadecimal = Convert.ToHexa(number);
                 System.out.println("HexaDecimal of " + number + " is : " + hexadecimal);
        } finally {
         s.close();

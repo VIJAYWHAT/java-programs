@@ -2,9 +2,9 @@ public class PrintPrimeOrNot{
 
 	public static void main(String... args){
 	
-		int num = 30;
+	int num = 30;
 	
-		for(int i=2;i<=num;i++)
+	for(int i=2;i<=num;i++)
 	{
 		int count=0;
 		for(int j=1;j<=i;j++){
