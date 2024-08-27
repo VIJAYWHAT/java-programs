@@ -13,7 +13,7 @@ class GuessGame
         int random_number=random.nextInt(1,max_value);
        // System.out.println("Random Value:"+random_number);
         
-        System.out.print("please Guess the number between 1 to "+max_value+" :");
+        System.out.print("please Guess the number between 1 to " + max_value + " :");
         Scanner sc = new Scanner(System.in);
         int guess_number=sc.nextInt();
         while(true)
@@ -21,7 +21,7 @@ class GuessGame
             if(guess_number > random_number)
             {
                 System.out.println("Number is high....");
-                System.out.print("Guess the number less than ( < )"+guess_number+":");
+                System.out.print("Guess the number less than ( < )" + guess_number + ":");
             }
 
              else if(guess_number < random_number)
