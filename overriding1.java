@@ -1,19 +1,19 @@
 
 class animal{
-    animal(){
+    private void name(){
         System.out.println("This is a animal!");
     }
-    void eat(){
+    protected void eat(){
         System.out.println("Eating...");
     }
 }
 
 class dog extends animal{
-    public void name() {
+    void name() {
         System.out.println("His name is Rocky!");
     }
 
-    @Override void eat() {
+    @Override public void eat() {
         System.out.println("Eating dog food");
     }
 }
