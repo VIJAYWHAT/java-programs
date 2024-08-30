@@ -1,0 +1,231 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Abstract",
+            "request": "launch",
+            "mainClass": "Abstract",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "CommandLineAddArgs",
+            "request": "launch",
+            "mainClass": "CommandLineAddArgs",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "CommandLineArgs",
+            "request": "launch",
+            "mainClass": "CommandLineArgs",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "DecimalToBinaryConvert",
+            "request": "launch",
+            "mainClass": "DecimalToBinaryConvert",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "DecimalToDesiredFormat",
+            "request": "launch",
+            "mainClass": "DecimalToDesiredFormat",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "DecimalToHexaConvert",
+            "request": "launch",
+            "mainClass": "DecimalToHexaConvert",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "DecimalToOctalConvert",
+            "request": "launch",
+            "mainClass": "DecimalToOctalConvert",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "FizzBuzz",
+            "request": "launch",
+            "mainClass": "FizzBuzz",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "GuessGame",
+            "request": "launch",
+            "mainClass": "GuessGame",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "Hello",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "MessageBot",
+            "request": "launch",
+            "mainClass": "MessageBot",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "OddOrEven",
+            "request": "launch",
+            "mainClass": "OddOrEven",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "PrimeNumber",
+            "request": "launch",
+            "mainClass": "PrimeNumber",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "PrintAsciiValues",
+            "request": "launch",
+            "mainClass": "PrintAsciiValues",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "PrintDiffTypeValues",
+            "request": "launch",
+            "mainClass": "PrintDiffTypeValues",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "PrintPrimeNumbers",
+            "request": "launch",
+            "mainClass": "PrintPrimeNumbers",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "PrintPrimeOrNot",
+            "request": "launch",
+            "mainClass": "PrintPrimeOrNot",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "StudentDetailsUsingObj",
+            "request": "launch",
+            "mainClass": "StudentDetailsUsingObj",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "Students",
+            "request": "launch",
+            "mainClass": "Students",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "StudentsList",
+            "request": "launch",
+            "mainClass": "StudentsList",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "SumOfTwoNumbers",
+            "request": "launch",
+            "mainClass": "SumOfTwoNumbers",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "Total_And_Avg",
+            "request": "launch",
+            "mainClass": "Total_And_Avg",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "area_circle",
+            "request": "launch",
+            "mainClass": "clg_programs.area_circle",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "rectangle_area",
+            "request": "launch",
+            "mainClass": "clg_programs.rectangle_area",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "single_inheritance",
+            "request": "launch",
+            "mainClass": "clg_programs.single_inheritance",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "for_loop",
+            "request": "launch",
+            "mainClass": "for_loop",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "inherit",
+            "request": "launch",
+            "mainClass": "inherit",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "overriding1",
+            "request": "launch",
+            "mainClass": "overriding1",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "HelloJdbc",
+            "request": "launch",
+            "mainClass": "practices.HelloJdbc",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "getEmployee",
+            "request": "launch",
+            "mainClass": "practices.getEmployee",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "supervariable",
+            "request": "launch",
+            "mainClass": "supervariable",
+            "projectName": "java-programs_87c2a1e8"
+        }
+    ]
+}
