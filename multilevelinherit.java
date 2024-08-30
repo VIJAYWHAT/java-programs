@@ -1,5 +1,3 @@
-import javax.sound.sampled.SourceDataLine;
-
 class parent {
     String name;
     String relation;
@@ -47,7 +45,7 @@ class gopi extends vj {
         callVj();
     }
 }
-public class inherit2 {
+public class multilevelinherit {
     public static void main(String... args){
         new gopi();
     }

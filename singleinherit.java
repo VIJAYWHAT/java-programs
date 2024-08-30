@@ -28,7 +28,7 @@ class MountainBike extends Bicycle {
         return super.toString() + "\n Seat Height = " + seatHeight;
     }
 } 
-public class inherit {
+public class singleinherit {
     public static void main(String... args){
         MountainBike mb = new MountainBike(4, 100, 25);
         System.out.println(mb.toString());
