@@ -1,18 +1,19 @@
-class SolarSystem {
+class solarSystem {
+
 }
-class Earth extends SolarSystem {
+class mars extends solarSystem {
 }
-class Mars extends SolarSystem {
+class earth extends solarSystem {
 }
-public class hybridinherit extends Earth {
+public class hybridinherit extends earth {
     public static void main(String args[])
     {
-        SolarSystem s = new SolarSystem();
-        Earth e = new Earth();
-        Mars m = new Mars();
+      solarSystem s = new solarSystem();
+      mars m = new mars();
+      earth e = new earth();
 
-        System.out.println(s instanceof SolarSystem);
-        System.out.println(e instanceof Earth);
-        System.out.println(m instanceof SolarSystem);
+      System.out.println(s instanceof solarSystem);
+      System.out.println(m instanceof mars);
+      System.out.println(e instanceof solarSystem);
     }
 }
