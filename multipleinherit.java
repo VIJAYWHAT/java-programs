@@ -17,7 +17,7 @@ class vj implements three {
     }
     public String printname(){
         return "Vijay";
-    }a
+    }
 }
 
 public class multipleinherit {

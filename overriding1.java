@@ -1,8 +1,6 @@
 
 class animal{
-    private void name(){
-        System.out.println("This is a animal!");
-    }
+
     protected void eat(){
         System.out.println("Eating...");
     }
