@@ -1,5 +1,4 @@
 class solarSystem {
-
 }
 class mars extends solarSystem {
 }
