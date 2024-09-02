@@ -25,10 +25,16 @@ class Employee {
     }
 }
 
-public class constructor {
+public class ConstructorExample {
     public static void main(String... args) {
         Employee emp = new Employee("VJ", 20, "Backend");
 
-        System.out.println(emp.toString());
+        String empString = emp.toString();
+        System.out.println("Employee String: " + empString);
+
+        // Extracting the name from the empString
+        String name = empString.substring(empString.indexOf("name=") + 5, empString.indexOf(", age="));
+        System.out.println("Extracted Name: " + name);
     }
 }
+
