@@ -26,7 +26,7 @@ class Employee {
 
     @Override
     public String toString(){
-        return "Employee [name=" + name + ", age=" + age + ", dept=" + dept + "]";
+        return "Employee [name=" + this.name + ", age=" + this.age + ", dept=" + this.dept + "]";
     }
 }
 
