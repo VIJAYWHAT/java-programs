@@ -1,39 +1,45 @@
 class Employee {
+
     String name;
     int age;
     String dept;
 
-    public Employee(String name, int age, String dept) {
+    public Employee (String name, int age, String dept) {
         this.name = name;
         this.age = age;
         this.dept = dept;
     }
+     
+    public String getName() {
+        return name;
+    } 
+    public int getAge() {
+        return age;
+    }
+    public String Dept() {
+        return dept;
+    }
 
-    // Return the current Employee object
     public Employee getEmployee() {
-        return this;
+        return new Employee(name, age, dept);
     }
 
-    // Override toString() to provide a string representation of the Employee
     @Override
-    public String toString() {
-        return "Name: " + this.name + ", Age: " + this.age + ", Dept: " + this.dept;
+    public String toString(){
+        return "Employee [name=" + name + ", age=" + age + ", dept=" + dept + "]";
     }
-
 }
-class constructor {
-    
-    public static void main(String[] args) {
-        // Create an Employee object
-        Employee emp = new Employee("John", 30, "IT");
 
-        // Get the Employee object using getEmployee() method
-        Employee returnedEmployee = emp.getEmployee();
+public class constructor {
+    public static void main(String... args) {
+        Employee emp = new Employee("VJ", 20, "Backend");
 
-        // Print the Employee object directly (which calls toString())
-        System.out.println(returnedEmployee);
+        Employee details = emp.getEmployee();
 
-        // Alternatively, you can explicitly call toString()
-        System.out.println(returnedEmployee.toString());
+        System.out.println(details);
+
+        System.out.println("\nEmployee Name: " + details.name
+                    + "\nEmployee Age: " + details.age
+                    + "\nEmployee Department: " + details.dept);
     }
 }
