@@ -1,9 +1,9 @@
 abstract class Animal{
-    public String name;
+    private String name;
 
     public Animal(String name){
         this.name = name; 
-    }
+    }   
 
     public void LineSpacing(){
         System.out.println("=====================");
@@ -17,6 +17,10 @@ abstract class Animal{
     public void Eat(){
         System.out.println(name + " is eating.");
     }
+    
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
 }
 
 class Dog extends Animal{
@@ -26,7 +30,7 @@ class Dog extends Animal{
 
     @Override
     public void MakeSound(){
-        System.out.print("Dog Sounds:");
+        System.out.print("Dog Sounds: ");
         System.out.println("Wow Woww...!!!");
     } 
 }
@@ -38,7 +42,7 @@ class Cat extends Animal{
 
     @Override
     public void MakeSound(){
-        System.out.print("Cat Sounds:");
+        System.out.print("Cat Sounds: ");
         System.out.println("Meow...");
     }
 }
@@ -48,16 +52,17 @@ public class Abstract
 
     public static void main(String... args){
 
-        Dog animal = new Dog("Rocky");
-        animal.MakeSound();
-        animal.Eat();
-        animal.Protect();
+        Dog dog = new Dog("Rocky");
+        dog.MakeSound();
+        dog.Eat();
+        dog.Protect();
 
-        animal.LineSpacing();
+        dog.LineSpacing();
 
         Cat cat = new Cat("Whity");
         cat.MakeSound();
         cat.Eat();
+        cat.sleep();
 
     }
 

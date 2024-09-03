@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "simpleAbstract",
+            "request": "launch",
+            "mainClass": "simpleAbstract",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "constructor",
             "request": "launch",
             "mainClass": "constructor",
