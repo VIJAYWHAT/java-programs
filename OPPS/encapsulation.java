@@ -1,3 +1,4 @@
+package OPPS;
 class person {
     private String name;
     private int age;

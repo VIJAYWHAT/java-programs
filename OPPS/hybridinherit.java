@@ -1,3 +1,4 @@
+package OPPS;
 class solarSystem {
 }
 class mars extends solarSystem {

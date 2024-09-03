@@ -1,3 +1,4 @@
+package OPPS;
 class animal{
 
     void eat(){ System.out.println("Eating..."); }

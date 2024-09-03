@@ -1,3 +1,4 @@
+package OPPS;
 abstract class base {
     abstract void func(); // Abstract method called
 

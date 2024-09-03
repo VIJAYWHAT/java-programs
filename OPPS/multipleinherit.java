@@ -1,3 +1,4 @@
+package OPPS;
 interface one {
     String printname();
 }

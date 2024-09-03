@@ -1,3 +1,4 @@
+package OPPS;
 class animal{
     animal(){ System.out.println("Animal is created"); }
 }

@@ -1,3 +1,4 @@
+package OPPS;
 class car{ String color = "white"; }
 
 class chevrolet extends car{
