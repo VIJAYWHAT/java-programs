@@ -7,8 +7,9 @@ abstract class A {
 
 class C extends A {
     class D extends B {
+        
         void myMethod() {
-            System.out.println("My method was implemented in the Class D...");
+            System.out.println("My method was implemented in the inner Class D...");
         }
     }
 }
