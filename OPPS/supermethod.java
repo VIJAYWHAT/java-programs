@@ -1,22 +1,23 @@
 package OPPS;
-class animal{
+class animal {
 
-    void eat(){ System.out.println("Eating..."); }
+    void eat() { System.out.println("Eating..."); }
 } 
 
-class cat extends animal{
+class cat extends animal {
 
-    void eat(){ System.out.println("Eating Fish..."); }
-    void sleep(){ System.out.println("Sleeping..."); }
+    void eat() { System.out.println("Eating Fish..."); }
+    void sleep() { System.out.println("Sleeping..."); }
 
-    void work(){
+    void work() {
         super.eat();
         sleep();
     }
+    
 }
 
 public class supermethod {
-    public static void main(String... args){
+    public static void main(String... args) {
 
         cat c = new cat();
         c.work();
