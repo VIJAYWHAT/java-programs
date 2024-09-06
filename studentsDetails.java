@@ -78,7 +78,7 @@ public class studentsDetails {
         marks s1 = new marks();
         Scanner sc = new Scanner(System.in);
         
-        
+        System.out.println("\n=============================");
         
         System.out.print("Enter student roll NO: "); s1.setId(sc.nextInt());
         sc.nextLine();
@@ -89,15 +89,19 @@ public class studentsDetails {
         System.out.print("Enter Maths mark: "); s1.setMaths(sc.nextInt());
         System.out.print("Enter Science mark: "); s1.setScience(sc.nextInt());
         System.out.print("Enter social: "); s1.setSocial(sc.nextInt());
-
-
+        
+        
+        System.out.println("=============================");
         System.out.println("Student Roll: " + s1.getId());
         System.out.println("Student Name: " + s1.getName());
         System.out.println("Student Mobile NO: " + s1.getNumber());
+        System.out.println("=============================");
         System.out.println("Tamil mark:" + s1.getTamil());
         System.out.println("English mark: " + s1.getEnglish());
         System.out.println("Maths work: " + s1.getMaths());
         System.out.println("Scince mark: " + s1.getScience());
         System.out.println("Social mark: " + s1.getSocial() ) ;
+        System.out.println("=============================");
+
     }
 }
