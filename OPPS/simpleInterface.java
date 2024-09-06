@@ -10,7 +10,7 @@ class simpleTest implements simple {
     }
 }
 
-public class interfaceProgram {
+public class simpleInterface {
     public static void main(String[] args) {
         simpleTest s = new simpleTest();
         s.display();

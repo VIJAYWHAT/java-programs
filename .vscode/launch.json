@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "simpleInterface2",
+            "request": "launch",
+            "mainClass": "OPPS.simpleInterface2",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "interfaceProgram",
             "request": "launch",
             "mainClass": "OPPS.interfaceProgram",
