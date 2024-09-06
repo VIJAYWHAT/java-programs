@@ -103,5 +103,7 @@ public class studentsDetails {
         System.out.println("Social mark: " + s1.getSocial() ) ;
         System.out.println("=============================");
 
+        
+
     }
 }
