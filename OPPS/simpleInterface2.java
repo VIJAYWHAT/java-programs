@@ -4,11 +4,13 @@ interface API {
     default void show() {
         System.out.println("Default API");
     }
+    
 }
 
 interface interface1 extends API {
     void display();
 }
+
 interface interface2 extends API {
     void print();
 }
