@@ -4,22 +4,18 @@ public class captcha {
 
     public static void main(String[] args) {
         
-        Random random = new Random();
-        String character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder Captcha = new StringBuilder();
-        Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i < 6; i++){
-            int index = random.nextInt(character.length());
-            Captcha.append(character.charAt(index));
-        }
+        RandomStringGenerator random = new RandomStringGenerator();
+        Scanner sc = new Scanner(System.in); 
 
+        String Captcha = random.getRandomString(6);
+        
         System.out.println("captcha: " + Captcha);
 
         System.out.print("Enter Captcha: ");
         String valid = sc.nextLine();
 
-        if (valid.equals(Captcha.toString())) {
+        if (valid.equals(Captcha)) {
             System.out.println("Captcha is correct!");
         }
         else{

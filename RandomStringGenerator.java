@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class RandomStringGenerator {
 
-    public static String getRandomString(int length) {
+    public String getRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         StringBuilder result = new StringBuilder();
@@ -16,7 +16,8 @@ public class RandomStringGenerator {
     }
 
     public static void main(String[] args) {
-        String randomString = getRandomString(6);
+        RandomStringGenerator random = new RandomStringGenerator();
+        String randomString = random.getRandomString(6);
         System.out.println("Random String: " + randomString);
     }
 }
