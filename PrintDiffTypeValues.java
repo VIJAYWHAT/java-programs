@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class PrintDiffTypeValues {
-   
+    
     public static void main(String... args) {
+        
+        String Results;
         Scanner s = new Scanner(System.in);
 
         System.out.println("Enter Student Details");
@@ -22,12 +24,12 @@ public class PrintDiffTypeValues {
         System.out.print("Enter Result(True/False): ");
         boolean bool = s.nextBoolean();
 
-        String Results;
+        
         if(bool){
-        Results = "Pass";
+            Results = "Pass";
         }
         else{
-        Results = "Fail";
+            Results = "Fail";
         }
 
         System.out.println("======================================");
