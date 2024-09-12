@@ -16,6 +16,15 @@ public class captcha {
 
         System.out.println("captcha: " + Captcha);
 
+        System.out.print("Enter Captcha: ");
+        String valid = sc.nextLine();
+
+        if (valid.equals(Captcha.toString())) {
+            System.out.println("Captcha is correct!");
+        }
+        else{
+            System.out.println("Incorrect captcha! Try again");
+        }
 
     }
 }
