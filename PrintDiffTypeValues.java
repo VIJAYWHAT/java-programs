@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class PrintDiffTypeValues {
-    @SuppressWarnings("resource")
+   
     public static void main(String... args) {
         Scanner s = new Scanner(System.in);
 
@@ -37,6 +37,6 @@ public class PrintDiffTypeValues {
         System.out.println("Pracentage: " + num2);
         System.out.println("Results: " + Results);
 
-
+        s.close();
     }
 }

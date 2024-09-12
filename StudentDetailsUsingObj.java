@@ -4,7 +4,7 @@ public class StudentDetailsUsingObj{
 
 public static void main(String... args){
 
-        @SuppressWarnings("resource")
+        
         Scanner s = new Scanner(System.in);
 
         Students s1 = new Students();
@@ -18,6 +18,7 @@ public static void main(String... args){
 
         System.out.println("Name: " + s1.Name);
         System.out.println("Age: " + s1.Age);
+        s.close();
 }
 
 }

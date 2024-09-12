@@ -102,8 +102,7 @@ public class studentsDetails {
         System.out.println("Scince mark: " + s1.getScience());
         System.out.println("Social mark: " + s1.getSocial() ) ;
         System.out.println("=============================");
-
-        
+        sc.close();
 
     }
 }
