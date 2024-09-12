@@ -25,6 +25,6 @@ public class captcha {
                 System.out.println("Incorrect captcha! Try again");
             }
         }
-
+        sc.close();
     }
 }
