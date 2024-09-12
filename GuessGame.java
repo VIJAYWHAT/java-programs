@@ -23,13 +23,13 @@ class GuessGame
                 System.out.println("Number is high....");
                 System.out.print("Guess the number less than ( < ) " + guess_number + " :");
             }
-
-             else if(guess_number < random_number)
+            else if(guess_number < random_number)
             {
                 System.out.println("Number is low....");
                 System.out.print("Guess the number greater than ( > ) " + guess_number + " :");
             }
-            else{
+            else
+            {
                 System.out.println("You won the Game....");
                 System.out.println("==================================================");
                 break;
