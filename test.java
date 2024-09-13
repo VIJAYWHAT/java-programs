@@ -1,5 +1,3 @@
-import clg_programs.rect_area;
-
 public class test {
     public static void main(String[] args) {
         int a = 5, b = 0;
