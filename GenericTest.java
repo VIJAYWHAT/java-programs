@@ -8,7 +8,7 @@ public class GenericTest {
         System.out.println("Name :" + genericStudent.getKey() + " Id :" + genericStudent.getValue());
 
         Pair<String, String> rmkStudent = new Pair<>();
-        rmkStudent.setKey("Raja");
+        rmkStudent.setKey("Vijay");
         rmkStudent.setValue("23USC013");
 
         System.out.println("Name :" + rmkStudent.getKey() + " Id :" + rmkStudent.getValue());
