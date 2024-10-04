@@ -1,3 +1,4 @@
+package JavaWorkshop.basics;
 import java.util.List;
 
 public class Exception {
@@ -6,6 +7,7 @@ public class Exception {
     
 }
 
+    @SuppressWarnings({ "unchecked", "rawtypes", "deprecation" })
     private static void myMethod() {
         try {
             List list = (List) Class.forName("com.techatpark.practices.oops.HelloClass").newInstance();

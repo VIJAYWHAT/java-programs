@@ -1,3 +1,5 @@
+package JavaWorkshop.basics;
+
 public class Arithmetic {
     public static int add(int a, int b) { //create a method named add with argument a and b
         return a + b; // return the value of a + b

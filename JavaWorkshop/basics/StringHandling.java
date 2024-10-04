@@ -1,3 +1,5 @@
+package JavaWorkshop.basics;
+
 public class StringHandling {
     private static String getString() {
         String string = "This is my first string program,I don't want to mess up with this";
