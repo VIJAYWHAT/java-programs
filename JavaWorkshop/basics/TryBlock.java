@@ -1,4 +1,4 @@
-package JavaWorkshop.basics;
+package basics;
 
 public class TryBlock {
     public static int divite(int i ,int j){                 

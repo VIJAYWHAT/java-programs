@@ -1,4 +1,4 @@
-package JavaWorkshop.basics;
+package basics;
 
 public class Arithmetic {
     public static int add(int a, int b) { //create a method named add with argument a and b

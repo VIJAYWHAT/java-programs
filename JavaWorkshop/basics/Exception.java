@@ -1,4 +1,4 @@
-package JavaWorkshop.basics;
+package basics;
 import java.util.List;
 
 public class Exception {

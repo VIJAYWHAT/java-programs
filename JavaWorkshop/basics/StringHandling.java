@@ -1,4 +1,4 @@
-package JavaWorkshop.basics;
+package basics;
 
 public class StringHandling {
     private static String getString() {
