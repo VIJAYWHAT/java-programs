@@ -1,17 +1,12 @@
-package practices;
+package com.techatpark.practices;
 
-import practices.model.Employee;
-import practices.repository.EmployeeRepository;
-
-import org.postgresql.ds.PGSimpleDataSource;
+import com.techatpark.practices.model.Employee;
+import com.techatpark.practices.repository.EmployeeRepository;
+import com.mysql.cj.jdbc.MysqlDataSource;
 
 import javax.sql.DataSource;
-import java.sql.Array;
-import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 
 public class HelloJdbc {
@@ -21,45 +16,20 @@ public class HelloJdbc {
 
         EmployeeRepository employeeRepository = new EmployeeRepository(dataSource);
         Employee employee = new Employee();
+        List<Long> employees = new ArrayList<>();
 
-//        employee.setId(24L);
         employee.setName("Venkad");
         employee.setPosition("QA");
 
-       /* Iterable<Employee> employees = employeeRepository.findAll();
-        for(Employee employee1 : employees){
-            System.out.println(employee1);
-        }*/
+        Long count = employeeRepository.count();
 
-        List<Long> employees = new ArrayList<>();
-        employee.setId(30L);
-        employees.add(employee.getId());
-        employee.setId(31L);
-        employees.add(employee.getId());
-        employee.setId(32L);
-        employees.add(employee.getId());
-
-
-//        Iterable<Employee> employeeRes = employeeRepository.findAllById(employees);
-//        System.out.println(employeeRes);
-
-//        employee.setId(30L);
-        boolean exists = employeeRepository.existsById(employee.getId());
-        if(exists){
-            System.out.println("Employee already exist");
-        }
-        else {
-            System.out.println("Employee not exist");
-        }
-
-
-//        long employeeCount = employeeRepository.count();
-//        System.out.println("Employees Count: " + employeeCount);
+        System.out.println("employees count:" + count);
     }
     private static DataSource getDatasource() {
-        PGSimpleDataSource dataSource = new PGSimpleDataSource();
-        dataSource.setUser("postgres");
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUser("user");
         dataSource.setPassword("password");
+        dataSource.setDatabaseName("mydb");
         return dataSource;
     }
 }

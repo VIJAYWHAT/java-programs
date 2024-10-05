@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    image: postgres:16
+    container_name: postgresdb
+    environment:
+      POSTGRES_DB: jdbcdb
+      POSTGRES_USER: jdbc
+      POSTGRES_PASSWORD: jdbc
+    ports:
+      - "5432:5432"

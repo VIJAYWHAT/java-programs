@@ -1,4 +1,4 @@
-package practices.model;
+package com.techatpark.practices.model;
 
 public class Employee {
 

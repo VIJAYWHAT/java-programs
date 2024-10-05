@@ -1,9 +1,12 @@
-package practices.repository;
+package com.techatpark.practices.repository;
 
-import practices.model.Employee;
+import com.techatpark.practices.model.Employee;
 import org.springframework.data.repository.*;
 
 import javax.sql.DataSource;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class EmployeeRepository implements CrudRepository<Employee, Long> {
@@ -19,7 +22,7 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
     public <S extends Employee> S save(S entity) {
         if(entity.getId() == null) {
             S createdEmployee = null;
-            String query = "INSERT INTO employee (\"name\", \"position\") VALUES (?, ?)";
+            String query = "INSERT INTO employee (name, position) VALUES (?, ?)";
             try (Connection connection = dataSource.getConnection();
                  PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, entity.getName());
@@ -38,9 +41,9 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
         }
         else{
             S updatedEmployee = null;
-            String query = "UPDATE Employee set \"name\" = ?, \"position\" = ? where id = ?";
+            String query = "UPDATE employee set name = ?, position = ? where id = ?";
             try (Connection connection = dataSource.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query)){
+                 PreparedStatement preparedStatement = connection.prepareStatement(query)){
                 preparedStatement.setString(1, entity.getName());
                 preparedStatement.setString(2, entity.getPosition());
                 preparedStatement.setLong(3, entity.getId());
@@ -61,15 +64,19 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
 
     @Override
     public <S extends Employee> Iterable<S> saveAll(Iterable<S> entities) {
-        return null;
+
+        List<Employee> employees = new ArrayList<>();
+        entities.forEach(employee -> employees.add(save(employee)));
+        return (Iterable<S>) employees;
+
     }
 
     @Override
-    public Optional<Employee> findById(Long aLong) {
-         String query = "SELECT id, name, position FROM employee WHERE id = ?";
+    public Optional<Employee> findById(Long id) {
+        String query = "SELECT id, name, position FROM employee WHERE id = ?";
         Employee employee = null;
         try(Connection connection = dataSource.getConnection();
-           PreparedStatement preparedStatement = connection.prepareStatement(query);){
+            PreparedStatement preparedStatement = connection.prepareStatement(query);){
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()){
@@ -78,26 +85,38 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
                 employee.setName(resultSet.getString(2));
                 employee.setPosition(resultSet.getString(3));
             }
-       }
-       catch (SQLException e){
-           e.printStackTrace();
-       }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
         return Optional.ofNullable(employee);
     }
 
     @Override
-    public Iterable<Employee> findAllById(Iterable<Long> ids) {
+    public boolean existsById(Long id) {
 
-        List<Employee> employees = new ArrayList<>();
+        String query = "SELECT 1 FROM employee where id = ?";
+        try(Connection connection = dataSource.getConnection();
+            PreparedStatement preparedStatement =  connection.prepareStatement(query)){
 
-        ids.forEach(id -> findById(id).ifPresent(employees::add));
-
-        return employees;
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
     public Iterable<Employee> findAll() {
-         List<Employee> employees = new ArrayList<>();
+
+        List<Employee> employees = new ArrayList<>();
         String query = "SELECT id, name, position FROM employee";
         try(Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query)){
@@ -118,31 +137,28 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
     }
 
     @Override
-    public boolean existsById(Long id) {
+    public Iterable<Employee> findAllById(Iterable<Long> ids) {
 
-        String query = "SELECT 1 FROM employee where id = ?";
-        try(Connection connection = dataSource.getConnection();
-        PreparedStatement preparedStatement =  connection.prepareStatement(query)){
+        List<Employee> employees = new ArrayList<>();
 
-            preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()){
-                return true;
-            }
-            else {
-                return false;
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
+        ids.forEach(id -> findById(id).ifPresent(employees::add));
+
+
+
+
+        for(Long id : ids){
+            findById(id).ifPresent(employees::add);
         }
-        return false;
+
+        return employees;
     }
 
     @Override
     public long count() {
-         String query = "SELECT COUNT(*) FROM employee";
+
+        String query = "SELECT COUNT(*) FROM employee";
         try(Connection connection = dataSource.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(query)){
+            PreparedStatement preparedStatement = connection.prepareStatement(query)){
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 return resultSet.getLong(1);
@@ -155,18 +171,18 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
     }
 
     @Override
-    public void deleteById(Long aLong) {
+    public void deleteById(Long id) {
         String query = "DELETE FROM employee WHERE id = ?";
 
         try(Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);) {
-             preparedStatement.setLong(1, id);
-             if(preparedStatement.executeUpdate() == 1){
-                 System.out.println("Employee id = " + id + " is deleted");
-             }
-             else{
-                 throw new IllegalArgumentException("Invalid ID Cannot Deleted");
-             }
+            preparedStatement.setLong(1, id);
+            if(preparedStatement.executeUpdate() == 1){
+                System.out.println("Employee id = " + id + " is deleted");
+            }
+            else{
+                throw new IllegalArgumentException("Invalid ID Cannot Deleted");
+            }
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -192,7 +208,7 @@ public class EmployeeRepository implements CrudRepository<Employee, Long> {
         }
     }
 
-   @Override
+    @Override
     public void deleteAll() {
         String query = "DELETE From employee";
         try(Connection connection = dataSource.getConnection();
