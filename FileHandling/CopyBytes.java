@@ -18,6 +18,7 @@ public class CopyBytes {
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
+            System.out.println("File write completed");
         } finally {
             if (in != null) {
                 in.close();
