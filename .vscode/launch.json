@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GenericMethod",
+            "request": "launch",
+            "mainClass": "generics.GenericMethod",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "GenericTest",
+            "request": "launch",
+            "mainClass": "generics.GenericTest",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "JDBCInsert",
             "request": "launch",
             "mainClass": "JDBC_Programs.JDBCInsert",
