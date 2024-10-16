@@ -5,25 +5,25 @@ class StringDemo {
         // charAt example
         char ch;
         ch = "abcd".charAt(1);
-        System.out.println("charAt: ");
+        System.out.print("charAt: ");
         System.out.println(ch);
 
         // String Concatenation example
         String age = "9";
-        System.out.println("String Concatenation: ");
+        System.out.print("String Concatenation: ");
         String s1 = "He is " + age + " years old";
         System.out.println(s1);
 
         // String length example
         char chars[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         String s2 = new String(chars);
-        System.out.println("String length:");
+        System.out.print("String length:");
         System.out.println(s2.length());
 
         // Using start index in string constructor
         char Chars[] = {'a', 'b', 'c'};
         String s3 = new String(chars, 1, 2);
-        System.out.println("Using start index:");
+        System.out.print("Using start index:");
         System.out.println(s3);
 
         // Substring examples
@@ -35,13 +35,13 @@ class StringDemo {
 
         // String replace example
         String s5 = "Hello".replace('l', 'w');
-        System.out.println("String replace:");
+        System.out.print("String replace:");
         System.out.println(s5);
 
         // String equals method
         String s6 = "hello";
         String s7 = "HELLO";
-        System.out.println("Equals method:");
+        System.out.print("Equals method:");
         System.out.println(s6 + " equals " + s7 + " == " + s6.equals(s7));
 
         // Searching strings (indexOf and lastIndexOf)
