@@ -1,5 +1,6 @@
-class newthread implements Runnable
-{
+package clg_programs;
+
+class newthread implements Runnable {
 Thread t;
 newthread()
 {
