@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TreadTest",
+            "request": "launch",
+            "mainClass": "clg_programs.TreadTest",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "CopyBytes",
             "request": "launch",
             "mainClass": "FileHandling.CopyBytes",
