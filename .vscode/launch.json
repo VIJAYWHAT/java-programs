@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MultiThread",
+            "request": "launch",
+            "mainClass": "clg_programs.MultiThread",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "demoThread",
             "request": "launch",
             "mainClass": "clg_programs.demoThread",
