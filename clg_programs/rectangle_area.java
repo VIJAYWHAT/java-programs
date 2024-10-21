@@ -1,10 +1,10 @@
 package clg_programs;
     
 class rectangle {
-        int length,width;
-        void getdata (int x,int y) {
-            length = x;
-            width = y;
+    int length,width;
+    void getdata (int x,int y) {
+        length = x;
+        width = y;
     }
     int rectarea() {
         int area=length*width;

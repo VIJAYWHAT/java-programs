@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "singleinherit",
+            "request": "launch",
+            "mainClass": "clg_programs.singleinherit",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "TreadTest",
             "request": "launch",
             "mainClass": "clg_programs.TreadTest",
