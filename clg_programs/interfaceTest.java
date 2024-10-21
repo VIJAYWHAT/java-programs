@@ -12,7 +12,6 @@ class rectangle implements area {
 }
 
 class circle implements area {
-
     public float compute(float x, float y) { 
         return (pi * x * x);
     }

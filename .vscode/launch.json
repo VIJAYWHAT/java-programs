@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "demoThread",
+            "request": "launch",
+            "mainClass": "clg_programs.demoThread",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "except",
+            "request": "launch",
+            "mainClass": "clg_programs.except",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "clg_programs.Main",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "interfaceTest",
+            "request": "launch",
+            "mainClass": "clg_programs.interfaceTest",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "packageTest",
             "request": "launch",
             "mainClass": "clg_programs.packageTest",
