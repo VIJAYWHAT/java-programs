@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyLoginWindow",
+            "request": "launch",
+            "mainClass": "clg_programs.MyLoginWindow",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "CopyFile1",
+            "request": "launch",
+            "mainClass": "clg_programs.CopyFile1",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
+            "name": "StringDemo",
+            "request": "launch",
+            "mainClass": "clg_programs.StringDemo",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "MultiThread",
             "request": "launch",
             "mainClass": "clg_programs.MultiThread",
