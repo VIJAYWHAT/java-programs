@@ -1,14 +1,13 @@
 package clg_programs;
 
 import java.awt.*;
-import java.awt.event.*;
 
 public class MyLoginWindow extends Frame {
     TextField name, pass;
     Button b1, b2;
 
     MyLoginWindow() {
-        // Set layout and components
+        
         this.setLayout(null);
         
         Label n = new Label("Name:", Label.CENTER);
@@ -49,6 +48,6 @@ public class MyLoginWindow extends Frame {
         MyLoginWindow m1 = new MyLoginWindow();
         m1.setVisible(true);
         m1.setSize(400, 400);
-        m1.setTitle("My Login Window");
+        m1.setTitle("My AWT Login Window ");
     }
 }
