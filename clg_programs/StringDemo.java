@@ -22,7 +22,7 @@ class StringDemo {
 
         // Using start index in string constructor
         char Chars[] = {'a', 'b', 'c'};
-        String s3 = new String(chars, 1, 2);
+        String s3 = new String(Chars, 1, 2);
         System.out.print("Using start index:");
         System.out.println(s3);
 

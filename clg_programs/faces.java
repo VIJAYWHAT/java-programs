@@ -2,6 +2,7 @@ package clg_programs;
 
 import java.awt.*;
 import java.applet.*;
+@SuppressWarnings("removal")
 public class faces extends Applet
 {
 public void paint(Graphics g)
