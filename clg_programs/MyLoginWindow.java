@@ -3,7 +3,7 @@ package clg_programs;
 import java.awt.*;
 import java.awt.event.*;
 
-class MyLoginWindow extends Frame {
+public class MyLoginWindow extends Frame {
     TextField name, pass;
     Button b1, b2;
 
