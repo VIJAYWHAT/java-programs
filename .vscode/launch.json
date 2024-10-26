@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "studentsDetails",
+            "request": "launch",
+            "mainClass": "studentsDetails",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "MyLoginWindow",
             "request": "launch",
             "mainClass": "clg_programs.MyLoginWindow",
