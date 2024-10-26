@@ -1,6 +1,4 @@
-
 class for_loop{
-
     public static void main(String[] args){
 
         String[] cars = {"audi","BMW","chevrolet","Ford"};
