@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "bankMain",
+            "request": "launch",
+            "mainClass": "banking.bankMain",
+            "projectName": "java-programs_87c2a1e8"
+        },
+        {
+            "type": "java",
             "name": "bank",
             "request": "launch",
             "mainClass": "banking.bank",
