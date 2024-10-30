@@ -8,6 +8,8 @@ public class bankApp {
     public static void initializeUsers() {
         users.add(new User(127101234, "Vijay", "vijay@123"));
         users.add(new User(127102345, "Gopi", "gopi@123"));
+        users.add(new User(127103456, "Ram", "ram@123"));
+        users.add(new User(127104567, "Hari", "hari@123"));
     }
 
     public static void welcome() { 
