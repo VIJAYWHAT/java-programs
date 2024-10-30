@@ -14,6 +14,7 @@ public class bankApp {
         System.out.println("===========================================");
         System.out.println("\tWelcome to Banking App");
         System.out.println("===========================================");
+        initializeUsers();
     }
 
     public static void login() {
