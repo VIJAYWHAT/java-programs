@@ -29,6 +29,7 @@ public class bankApp {
 
             User user = findUser(username, password);
             if(user != null) {
+                System.out.print("\033\143"); // for clear console
                 System.out.println("Login successful");
                 userMenu();
                 return;
@@ -56,7 +57,7 @@ public class bankApp {
             System.out.println("4. Deposit");
             System.out.println("5. Withdraw");
     }
-    
-    
+
+  
    
 }
