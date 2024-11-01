@@ -30,6 +30,7 @@ public class bankApp {
             User user = findUser(username, password);
             if(user != null) {
                 System.out.println("Login successful");
+                userMenu();
                 return;
             } else {
                 System.out.println("Invalid creadentials, try again!");
@@ -45,6 +46,15 @@ public class bankApp {
                 return user;
         }
         return null;
+    }
+    
+    public static void userMenu() {
+            System.out.println("\n--- User Menu ---");
+            System.out.println("1. Check Balance");
+            System.out.println("2. View Profile");
+            System.out.println("3. Print Statement");
+            System.out.println("4. Deposit");
+            System.out.println("5. Withdraw");
     }
     
     
