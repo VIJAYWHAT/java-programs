@@ -58,6 +58,9 @@ public class bankApp {
             System.out.println("5. Withdraw");
     }
 
-  
-   
+    private static void userDetails(User user) {
+        Account account = new Account(user);
+
+    }
+
 }
