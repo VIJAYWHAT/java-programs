@@ -6,10 +6,10 @@ public class bankApp {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void initializeUsers() {
-        users.add(new User(127101234, "Vijay", "vijay@123"));
-        users.add(new User(127102345, "Gopi", "gopi@123"));
-        users.add(new User(127103456, "Ram", "ram@123"));
-        users.add(new User(127104567, "Hari", "hari@123"));
+        users.add(new User(127101234, "Vijay", "vijay@123", 5000));
+        users.add(new User(127102345, "Gopi", "gopi@123", 4000));
+        users.add(new User(127103456, "Ram", "ram@123", 2500));
+        users.add(new User(127104567, "Hari", "hari@123", 1000));
     }
 
     public static void welcome() { 
@@ -31,7 +31,7 @@ public class bankApp {
             if(user != null) {
                 System.out.print("\033\143"); // for clear console
                 System.out.println("Login successful");
-                userMenu();
+                userDetails(user);
                 return;
             } else {
                 System.out.println("Invalid creadentials, try again!");
@@ -60,7 +60,8 @@ public class bankApp {
 
     private static void userDetails(User user) {
         Account account = new Account(user);
-
+        
+       
     }
 
 }
