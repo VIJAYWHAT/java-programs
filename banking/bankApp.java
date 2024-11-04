@@ -61,7 +61,17 @@ public class bankApp {
     private static void userDetails(User user) {
         Account account = new Account(user);
         
-       
+        while(true) {
+
+            userMenu();
+            System.out.print("Enter choice: ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1 -> account.checkBalance();
+
+                default -> System.out.println("Invalid choice, please try again.");
+            }
+        }
     }
 
 }

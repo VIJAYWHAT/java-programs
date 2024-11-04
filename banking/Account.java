@@ -9,7 +9,7 @@ public class Account {
     }
 
     public void checkBalance() {
-        
+        System.out.print("\033\143"); // for clear console
         System.out.println("Current Balance: $" + user.getBalance());
     }
 }
