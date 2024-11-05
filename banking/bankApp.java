@@ -76,15 +76,34 @@ public class bankApp {
         System.out.print("\nContinue (C)/ Logout(L): ");
         char cont = scanner.next().charAt(0);
         if (cont == 'C' || cont == 'c') {
-            System.out.print("\033\143"); // for clear console
+            System.out.print("\033\143");
             userDetails(user);
         }
         else if(cont == 'L' || cont == 'l')
-            return;
+            logout();
         else {
             System.out.println("Invalid choice, please try again.");
             cont_check(user);
         }
     }
+
+    private static void logout() {
+        System.out.print("\033\143");
+        System.out.println("\nYou have successfully logged out.");
+        System.out.print("\nLogin(Y) / Exit(N): ");
+        char c = scanner.next().charAt(0);
+        
+        if(c == 'Y' || c == 'y'){
+            System.out.print("\033\143");
+            login();
+        }
+        else{
+            System.out.print("\033\143");
+            System.out.println("Thank you for using our services.\n");
+            return;
+        }
+    }
+
+    
 
 }
