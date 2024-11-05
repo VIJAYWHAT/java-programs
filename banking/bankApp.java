@@ -29,7 +29,7 @@ public class bankApp {
 
             User user = findUser(username, password);
             if(user != null) {
-                System.out.print("\033\143"); // for clear console
+                cls(); // for clear console
                 System.out.println("Login successful");
                 userDetails(user);
                 return;
@@ -76,7 +76,7 @@ public class bankApp {
         System.out.print("\nContinue (C)/ Logout(L): ");
         char cont = scanner.next().charAt(0);
         if (cont == 'C' || cont == 'c') {
-            System.out.print("\033\143");
+            cls();
             userDetails(user);
         }
         else if(cont == 'L' || cont == 'l')
@@ -88,22 +88,24 @@ public class bankApp {
     }
 
     private static void logout() {
-        System.out.print("\033\143");
+        cls();
         System.out.println("\nYou have successfully logged out.");
         System.out.print("\nLogin(Y) / Exit(N): ");
         char c = scanner.next().charAt(0);
         
         if(c == 'Y' || c == 'y'){
-            System.out.print("\033\143");
+            cls();
             login();
         }
         else{
-            System.out.print("\033\143");
+            cls();
             System.out.println("Thank you for using our services.\n");
             return;
         }
     }
 
-    
+    static void cls() {
+        System.out.print("\033\143");
+    }
 
 }
