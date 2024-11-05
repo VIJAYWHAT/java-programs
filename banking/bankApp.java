@@ -61,16 +61,29 @@ public class bankApp {
     private static void userDetails(User user) {
         Account account = new Account(user);
         
-        while(true) {
+        userMenu();
+        System.out.print("Enter choice: ");
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1 -> account.checkBalance();
 
-            userMenu();
-            System.out.print("Enter choice: ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1 -> account.checkBalance();
+            default -> System.out.println("Invalid choice, please try again.");
+        }
+        cont_check(user);
+    }
 
-                default -> System.out.println("Invalid choice, please try again.");
-            }
+    private static void cont_check(User user) {
+        System.out.print("\nContinue (C)/ Logout(L): ");
+        char cont = scanner.next().charAt(0);
+        if (cont == 'C' || cont == 'c') {
+            System.out.print("\033\143"); // for clear console
+            userDetails(user);
+        }
+        else if(cont == 'L' || cont == 'l')
+            return;
+        else {
+            System.out.println("Invalid choice, please try again.");
+            cont_check(user);
         }
     }
 
