@@ -66,6 +66,7 @@ public class bankApp {
         int choice = scanner.nextInt();
         switch (choice) {
             case 1 -> account.checkBalance();
+            case 2 -> account.viewProfile();
 
             default -> System.out.println("Invalid choice, please try again.");
         }
@@ -104,7 +105,7 @@ public class bankApp {
         }
     }
 
-    static void cls() {
+    public static void cls() {
         System.out.print("\033\143"); // clear console
     }
 

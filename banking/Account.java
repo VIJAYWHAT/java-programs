@@ -14,9 +14,13 @@ public class Account {
     }
 
     public void viewProfile() {
+        bankApp.cls();
+        System.out.println("===================");
+        System.out.println("***** Profile *****");
+        System.out.println("===================\n");
         System.out.println("User Name: " + user.getUserName());
         System.out.println("Account no: " + user.getAccountNo());
         System.out.println("Current Balance: $" + user.getBalance());
     }
-    
+
 }
