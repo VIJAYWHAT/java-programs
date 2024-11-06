@@ -105,7 +105,7 @@ public class bankApp {
     }
 
     static void cls() {
-        System.out.print("\033\143");
+        System.out.print("\033\143"); // clear console
     }
 
 }
