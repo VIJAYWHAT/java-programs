@@ -1,5 +1,10 @@
 package banking;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Account {
 
     private User user;
@@ -22,5 +27,19 @@ public class Account {
         System.out.println("Account no: " + user.getAccountNo());
         System.out.println("Current Balance: $" + user.getBalance());
     }
+
+    public void printStatement() {
+        try(BufferedReader reader = new BufferedReader(new FileReader(user.getAccountNo() + ".txt"))) {
+            String line;
+            System.out.println("Transaction statement: ");
+            while((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+        }
+        catch(IOException e){
+            System.out.println("Error reading statement: " + e.getMessage());
+        }
+    }
+    
 
 }

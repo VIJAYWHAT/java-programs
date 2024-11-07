@@ -1,0 +1,16 @@
+*************************
+    Banking Statement
+*************************
+
+Name: Hariharan M
+Ac No: 127104567
+Email: hariharan@gmail.ac.in
+Phone: 9384560000
+
+---------------------------------------------------------------------------------
+Date    	Description	   Transaction Type   Amount (Rs)   Balance (Rs)
+---------------------------------------------------------------------------------
+01-01-2024	Initial Deposit	    Credit		5000  	    5000
+02-01-2024	Deposit             Credit		1000  	    6000
+03-01-2024	Withdrawal	    Dedit		500  	    5500
+05-01-2024	Deposit		    Credit		2000  	    7500

@@ -1,0 +1,21 @@
+*************************
+    Banking Statement
+*************************
+
+Name: Gopinath R
+Ac No: 127102345
+Email: gopinath@gmail.ac.in
+Phone: 9629630000
+
+---------------------------------------------------------------------------------
+Date    	Description	   Transaction Type   Amount (Rs)   Balance (Rs)
+---------------------------------------------------------------------------------
+06-02-2024	Initial Deposit	    Credit		20000  	    20000
+08-02-2024	Withdrawal	    Debit		5000  	    15000
+12-02-2024	Deposit		    Credit		1000  	    16000
+10-03-2024	Deposit		    Credit		3500  	    19500
+10-03-2024	Withdrawal	    Debit		2000  	    17500
+08-07-2024	Deposit		    Credit		2500  	    20000
+08-07-2024	Withdrawal	    Debit		1500  	    18500
+09-07-2024	Deposit		    Credit		1500  	    20000
+09-07-2024	Withdrawal	    Debit		500  	    19500
