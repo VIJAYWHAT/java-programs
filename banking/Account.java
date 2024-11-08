@@ -28,16 +28,15 @@ public class Account {
     }
 
     public void printStatement() {
-        try(BufferedReader reader = new BufferedReader(new FileReader(user.getAccountNo() + ".txt"))) {
+        bankApp.cls();
+        try (BufferedReader reader = new BufferedReader(new FileReader("banking/" + user.getAccountNo() + ".txt"))) {
             String line;
-            System.out.println("Transaction statement: ");
-            while((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-        }
-        catch(IOException e){
-            System.out.println("Error reading statement: " + e.getMessage());
-        }
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }       
     }
     
 
