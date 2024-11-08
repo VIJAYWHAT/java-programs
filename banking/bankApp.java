@@ -60,7 +60,6 @@ public class bankApp {
 
     private static void userDetails(User user) {
         Account account = new Account(user);
-        User.setBalance(account.GetAcBalance());
         userMenu();
         System.out.print("Enter choice: ");
         int choice = scanner.nextInt();

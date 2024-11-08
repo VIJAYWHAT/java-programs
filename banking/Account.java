@@ -14,7 +14,7 @@ public class Account {
 
     public void checkBalance() {
         System.out.print("\033\143"); // for clear console
-        System.out.println("Current Balance: $" + user.getBalance());
+        System.out.println("Current Balance: $" + GetAcBalance());
     }
 
     public void viewProfile() {
@@ -24,7 +24,7 @@ public class Account {
         System.out.println("===================\n");
         System.out.println("User Name: " + user.getUserName());
         System.out.println("Account no: " + user.getAccountNo());
-        System.out.println("Current Balance: $" + user.getBalance());
+        System.out.println("Current Balance: $" + GetAcBalance());
     }
 
     public void printStatement() {
