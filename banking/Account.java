@@ -29,7 +29,7 @@ public class Account {
 
     public void printStatement() {
         bankApp.cls();
-        try (BufferedReader reader = new BufferedReader(new FileReader("banking/" + user.getAccountNo() + ".txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
