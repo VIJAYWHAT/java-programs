@@ -39,7 +39,7 @@ public class Account {
         }       
     }
 
-    public float balanceCheck() {
+    public float GetAcBalance() {
 
         float balance = 0.0f;
         try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
@@ -63,7 +63,7 @@ public class Account {
         } catch (NumberFormatException e) {
             System.err.println("Invalid balance format in the file.");
         }
-
+        
         return balance;
     }
     
