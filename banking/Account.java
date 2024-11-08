@@ -38,6 +38,34 @@ public class Account {
             System.out.println("Error reading file: " + e.getMessage());
         }       
     }
+
+    public float balanceCheck() {
+
+        float balance = 0.0f;
+        try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
+            String line;
+            String balanceStr = null;
+
+
+            while ((line = reader.readLine()) != null) {
+                String[] tokens = line.split("\\s+"); 
+                if (tokens.length > 0) {
+                    balanceStr = tokens[tokens.length - 1];
+                }
+            }
+
+            if (balanceStr != null) {
+                balance = Float.parseFloat(balanceStr);
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error reading account statement: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid balance format in the file.");
+        }
+
+        return balance;
+    }
     
 
 }
