@@ -67,6 +67,7 @@ public class bankApp {
             case 1 -> account.checkBalance();
             case 2 -> account.viewProfile();
             case 3 -> account.printStatement();
+            case 4 -> account.deposit(user.getAccountNo());
 
             default -> System.out.println("Invalid choice, please try again.");
         }

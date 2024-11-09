@@ -3,10 +3,12 @@ package banking;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Account {
 
     private User user;
+    Scanner sc = new Scanner(System.in);
 
     public Account(User user) {
         this.user = user;
@@ -67,5 +69,23 @@ public class Account {
         return balance;
     }
     
+    public void deposit(int ac_no) {
+        
+        bankApp.cls();
+        System.out.print("Enter the amount you want to deposit: ");
+        int amount = sc.nextInt();
+        bankApp.cls();
+
+        System.out.print("Are you sure want to deposit: " + amount + "? (y/n): ");
+        char c = sc.next().charAt(0);
+
+        if(c == 'y' || c == 'Y') {
+            System.out.println("Amount deposited successfully");
+        }
+        else
+            System.out.println("Deposit cancelled");
+
+
+    }
 
 }
