@@ -8,15 +8,15 @@ import java.time.format.DateTimeFormatter;
 
 public class BankAccount {
 
-    public static boolean depositPrint(int acNo, int amount) {
+    public static boolean WithdrawalPrint(int acNo, int amount) {
 
-        int balance = balanceCheck(acNo) + amount;
+        int balance = balanceCheck(acNo) - amount;
 
         String currentDate = getCurrentDate();
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("banking/ac_statements/" + acNo + ".txt", true))) {
 
-            writer.write(String.format("%s\tDeposit\t\t    Credit\t\t%d  \t    %d%n", currentDate, amount, balance));
+            writer.write(String.format("%s\tWithdrawal\t    Debit\t\t%d  \t    %d\n", currentDate, amount, balance));
             return true; 
         } catch (IOException e) {
             System.err.println("Error opening file: " + e.getMessage());
@@ -37,7 +37,7 @@ public class BankAccount {
         int accountNumber = 127101234;
         int depositAmount = 5500;
 
-        boolean success = depositPrint(accountNumber, depositAmount);
+        boolean success = WithdrawalPrint(accountNumber, depositAmount);
         if (success) {
             System.out.println("Transaction successfully recorded.");
         } else {
