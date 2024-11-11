@@ -1,7 +1,13 @@
 package banking;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class bankApp {
+   
     public static ArrayList<User> users = new ArrayList<>();
     public static Scanner scanner = new Scanner(System.in);
 
@@ -11,6 +17,7 @@ public class bankApp {
         users.add(new User(127103456, "Ram", "ram@123"));
         users.add(new User(127104567, "Hari", "hari@123"));
     }
+     
 
     public static void welcome() { 
         System.out.println("===========================================");
@@ -87,6 +94,25 @@ public class bankApp {
             System.out.println("Invalid choice, please try again.");
             cont_check(user);
         }
+    }
+
+    public static boolean depositPrint(int acNo, int amount, int balance) {
+        
+        String currentDate = getCurrentDate();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("banking/ac_statements/" + acNo + ".txt", true))) {
+
+            writer.write(String.format("%s\tDeposit\t\t    Credit\t\t%d  \t    %d%n", currentDate, amount, balance));
+            return true; 
+        } catch (IOException e) {
+            System.err.println("Error opening file: " + e.getMessage());
+            return false; 
+        }
+    }
+
+    private static String getCurrentDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return LocalDate.now().format(formatter);
     }
 
     private static void logout() {

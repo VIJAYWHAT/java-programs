@@ -80,7 +80,13 @@ public class Account {
         char c = sc.next().charAt(0);
 
         if(c == 'y' || c == 'Y') {
-            System.out.println("Amount deposited successfully");
+            int balance = (int) GetAcBalance() + amount;
+            boolean deposited = bankApp.depositPrint(ac_no, amount, balance);
+            if (deposited) {
+                System.out.println("Amount deposited successfully");
+            }
+            else
+                System.out.println("Deposit failed");
         }
         else
             System.out.println("Deposit cancelled");
