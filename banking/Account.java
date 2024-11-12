@@ -101,10 +101,17 @@ public class Account {
         int amount = sc.nextInt();
 
         if (amount <= GetAcBalance()) {
+            bankApp.cls();
             System.out.print("Are you sure want to withdraw " + amount + "? (y/n): ");
-            char c = sc.next().charAt(0);
-            if (c == 'y' || c == 'Y') {
-                
+            char ch = sc.next().charAt(0);
+            if (ch == 'y' || ch == 'Y') {
+                boolean withdrawed = bankApp.WithdrawalPrint(ac_no, amount, (int) GetAcBalance() - amount);
+                if (withdrawed) {
+                    System.out.println("Withdrawal Successful");
+                    System.out.println("Your current balance: $" + GetAcBalance());
+                } else {
+                    System.out.println("Withdrawal Failed");
+                }
             } else {
                 System.out.println("Withdraw Cancelled");
             }

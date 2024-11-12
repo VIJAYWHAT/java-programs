@@ -111,6 +111,20 @@ public class bankApp {
         }
     }
 
+    public static boolean WithdrawalPrint(int acNo, int amount, int balance) {
+
+        String currentDate = getCurrentDate();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("banking/ac_statements/" + acNo + ".txt", true))) {
+
+            writer.write(String.format("%s\tWithdrawal\t    Debit\t\t%d  \t    %d\n", currentDate, amount, balance));
+            return true; 
+        } catch (IOException e) {
+            System.err.println("Error opening file: " + e.getMessage());
+            return false; 
+        }
+    }
+
     private static String getCurrentDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return LocalDate.now().format(formatter);
