@@ -25,3 +25,5 @@ Date    	Description	   Transaction Type   Amount (Rs)   Balance (Rs)
 13-11-2024	Deposit		    Credit		500  	    16400
 13-11-2024	Withdrawal	    Debit		200  	    16200
 13-11-2024	Withdrawal	    Debit		1400  	    14800
+13-11-2024	Deposit		    Credit		500  	    15300
+13-11-2024	Withdrawal	    Debit		1500  	    13800

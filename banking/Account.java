@@ -94,31 +94,54 @@ public class Account {
     }
 
     public void Withdraw(int ac_no) {
-        
         bankApp.cls();
+        int Trypass = 0;
         System.out.println("Your balance: " + GetAcBalance());
         System.out.print("Enter the amount you want to withdraw: ");
         int amount = sc.nextInt();
-
+    
         if (amount <= GetAcBalance()) {
             bankApp.cls();
-            System.out.print("Are you sure want to withdraw " + amount + "? (y/n): ");
+            System.out.print("Are you sure you want to withdraw " + amount + "? (y/n): ");
             char ch = sc.next().charAt(0);
+    
             if (ch == 'y' || ch == 'Y') {
-                boolean withdrawed = bankApp.WithdrawalPrint(ac_no, amount, (int) GetAcBalance() - amount);
-                if (withdrawed) {
-                    System.out.println("Withdrawal Successful");
-                    System.out.println("Your current balance: $" + GetAcBalance());
-                } else {
-                    System.out.println("Withdrawal Failed");
+
+                boolean authenticated = false;
+                
+                while (Trypass < 4 && !authenticated) {
+                    System.out.println("Enter your password: ");
+                    String password = sc.next();
+                    
+                    if (password.equals(user.getPassword())) {
+                        authenticated = true;
+                    } else {
+                        Trypass++;
+                        System.out.println("Password Wrong! Try again...");
+                        if (Trypass == 4) {
+                            System.out.println("You have exceeded the number of attempts!!!");
+                            return;
+                        }
+                    }
+                }
+    
+                if (authenticated) {
+                    int balance = (int) (GetAcBalance() - amount);
+                    boolean withdrawn = bankApp.WithdrawalPrint(ac_no, amount, balance);
+                    if (withdrawn) {
+                        System.out.println("Withdrawal Successful");
+                        System.out.println("Your current balance: $" + balance);
+                    } else {
+                        System.out.println("Withdrawal Failed");
+                    }
                 }
             } else {
                 System.out.println("Withdraw Cancelled");
             }
-        }
-        else
+        } else {
             System.out.println("Insufficient balance");
-
+        }
     }
+    
 
 }

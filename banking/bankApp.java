@@ -28,7 +28,7 @@ public class bankApp {
 
     public static void login() {
         int attempts = 0;
-        while (attempts < 4) {
+        while (attempts < 3) {
             System.out.print("Enter UserName: ");
             String username = scanner.next();
             System.out.print("Enter Password: ");
@@ -55,6 +55,8 @@ public class bankApp {
         }
         return null;
     }
+
+    
     
     public static void userMenu() {
             System.out.println("\n--- User Menu ---");
