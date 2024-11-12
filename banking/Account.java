@@ -91,6 +91,26 @@ public class Account {
         else
             System.out.println("Deposit cancelled");
 
+    }
+
+    public void Withdraw(int ac_no) {
+        
+        bankApp.cls();
+        System.out.println("Your balance: " + GetAcBalance());
+        System.out.print("Enter the amount you want to withdraw: ");
+        int amount = sc.nextInt();
+
+        if (amount <= GetAcBalance()) {
+            System.out.print("Are you sure want to withdraw " + amount + "? (y/n): ");
+            char c = sc.next().charAt(0);
+            if (c == 'y' || c == 'Y') {
+                
+            } else {
+                System.out.println("Withdraw Cancelled");
+            }
+        }
+        else
+            System.out.println("Insufficient balance");
 
     }
 
