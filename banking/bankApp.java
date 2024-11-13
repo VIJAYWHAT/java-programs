@@ -145,7 +145,7 @@ public class bankApp {
         else{
             cls();
             System.out.println("Thank you for using our services.\n");
-            return;
+            System.exit(0);
         }
     }
 

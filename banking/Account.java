@@ -109,18 +109,22 @@ public class Account {
 
                 boolean authenticated = false;
                 
+                bankApp.cls();
                 while (Trypass < 4 && !authenticated) {
-                    System.out.println("Enter your password: ");
+                    System.out.print("Enter your password: ");
                     String password = sc.next();
                     
                     if (password.equals(user.getPassword())) {
                         authenticated = true;
                     } else {
                         Trypass++;
+                        bankApp.cls();
                         System.out.println("Password Wrong! Try again...");
+                        System.out.println((4 - Trypass) + " Attempts left!");
                         if (Trypass == 4) {
+                            bankApp.cls();
                             System.out.println("You have exceeded the number of attempts!!!");
-                            return;
+                            System.exit(0);   
                         }
                     }
                 }
