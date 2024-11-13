@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class bankApp extends Account {
 
@@ -75,15 +76,22 @@ public class bankApp extends Account {
         Account account = new Account(user);
         userMenu();
         System.out.print("Enter choice: ");
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1 -> account.checkBalance();
-            case 2 -> account.viewProfile();
-            case 3 -> account.printStatement();
-            case 4 -> account.deposit(user.getAccountNo());
-            case 5 -> account.Withdraw(user.getAccountNo());
+        try {            
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1 -> account.checkBalance();
+                case 2 -> account.viewProfile();
+                case 3 -> account.printStatement();
+                case 4 -> account.deposit(user.getAccountNo());
+                case 5 -> account.Withdraw(user.getAccountNo());
 
-            default -> System.out.println("Invalid choice, please try again.");
+                default -> System.out.println("Invalid choice, please try again.");
+            }
+        } catch(InputMismatchException e) {
+            cls();
+            System.out.println("Invalid input. Please enter a number between 1 to 5.");
+            scanner.nextLine();
+            userDetails(user);
         }
         cont_check(user);
     }
