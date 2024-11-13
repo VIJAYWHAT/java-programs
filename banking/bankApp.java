@@ -6,7 +6,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class bankApp {
+public class bankApp extends Account {
+
+    bankApp(){
+        super(null);
+    }
    
     public static ArrayList<User> users = new ArrayList<>();
     public static Scanner scanner = new Scanner(System.in);
@@ -99,9 +103,10 @@ public class bankApp {
         }
     }
 
-    public static boolean depositPrint(int acNo, int amount, int balance) {
+    public static boolean depositPrint(int acNo, int amount) {
         
         String currentDate = getCurrentDate();
+        int balance = (int) GetAcBalance() + amount;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("banking/ac_statements/" + acNo + ".txt", true))) {
 
@@ -113,10 +118,11 @@ public class bankApp {
         }
     }
 
-    public static boolean WithdrawalPrint(int acNo, int amount, int balance) {
+    public static boolean WithdrawalPrint(int acNo, int amount) {
 
         String currentDate = getCurrentDate();
-
+        int balance = (int) GetAcBalance() - amount;
+        
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("banking/ac_statements/" + acNo + ".txt", true))) {
 
             writer.write(String.format("%s\tWithdrawal\t    Debit\t\t%d  \t    %d\n", currentDate, amount, balance));

@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 public class Account {
 
-    private User user;
+    private static User user;
     Scanner sc = new Scanner(System.in);
 
     public Account(User user) {
-        this.user = user;
+        Account.user = user;
     }
 
     public void checkBalance() {
         System.out.print("\033\143"); // for clear console
         System.out.println("Current Balance: $" + GetAcBalance());
     }
-
+    
     public void viewProfile() {
         bankApp.cls();
         System.out.println("===================");
@@ -28,7 +28,7 @@ public class Account {
         System.out.println("Account no: " + user.getAccountNo());
         System.out.println("Current Balance: $" + GetAcBalance());
     }
-
+    
     public void printStatement() {
         bankApp.cls();
         try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
@@ -40,11 +40,11 @@ public class Account {
             System.out.println("Error reading file: " + e.getMessage());
         }       
     }
-
-    public float GetAcBalance() {
-
-        float balance = 0.0f;
-        try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
+    
+    public static float GetAcBalance() {
+    
+            float balance = 0.0f;
+            try (BufferedReader reader = new BufferedReader(new FileReader("banking/ac_statements/" + user.getAccountNo() + ".txt"))) {
             String line;
             String balanceStr = null;
 
@@ -80,8 +80,7 @@ public class Account {
         char c = sc.next().charAt(0);
 
         if(c == 'y' || c == 'Y') {
-            int balance = (int) GetAcBalance() + amount;
-            boolean deposited = bankApp.depositPrint(ac_no, amount, balance);
+            boolean deposited = bankApp.depositPrint(ac_no, amount);
             if (deposited) {
                 System.out.println("Amount deposited successfully");
             }
@@ -130,11 +129,10 @@ public class Account {
                 }
     
                 if (authenticated) {
-                    int balance = (int) (GetAcBalance() - amount);
-                    boolean withdrawn = bankApp.WithdrawalPrint(ac_no, amount, balance);
+                    boolean withdrawn = bankApp.WithdrawalPrint(ac_no, amount);
                     if (withdrawn) {
                         System.out.println("Withdrawal Successful");
-                        System.out.println("Your current balance: $" + balance);
+                        System.out.println("Your current balance: $" + GetAcBalance());
                     } else {
                         System.out.println("Withdrawal Failed");
                     }
