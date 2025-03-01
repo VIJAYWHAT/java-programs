@@ -3,6 +3,7 @@ import java.util.Collection;
 
 // This code demonstrates a simple example of a composite pattern where
 // an Item can be a simple item or a box that can contain other items.
+// Usage of the composite pattern allows us to treat individual items andcollections of items uniformly.
 public class CreationalMagic {
     public static void main(String[] args) {
         Item pen = new Item();
@@ -16,6 +17,9 @@ public class CreationalMagic {
         pinBox.addItem(pin);
 
         penBox.addItem(pinBox); 
+
+        // penBox now contains a pen and a pinBox, which in turn contains a pin
+     
         
     }
 }
@@ -35,4 +39,6 @@ class Box extends Item {
     void addItem(Item item) {
         items.add(item);
     }
+
+  
 }
