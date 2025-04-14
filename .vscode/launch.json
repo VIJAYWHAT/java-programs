@@ -6,6 +6,24 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Annotations",
+            "request": "launch",
+            "mainClass": "Annotations"
+        },
+        {
+            "type": "java",
+            "name": "DecimalToOctalConvert",
+            "request": "launch",
+            "mainClass": "DecimalToOctalConvert"
+        },
+        {
+            "type": "java",
+            "name": "MainFunction",
+            "request": "launch",
+            "mainClass": "com.example.app/com.example.app.MainFunction"
+        },
+        {
+            "type": "java",
             "name": "bankMain",
             "request": "launch",
             "mainClass": "com.example.app/banking.bankMain"
