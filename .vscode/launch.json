@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "file_copy",
+            "request": "launch",
+            "mainClass": "file_copy"
+        },
+        {
+            "type": "java",
+            "name": "CopyFile1",
+            "request": "launch",
+            "mainClass": "clg_programs.CopyFile1"
+        },
+        {
+            "type": "java",
             "name": "BankApplication",
             "request": "launch",
             "mainClass": "banking.BankApplication",
