@@ -10,7 +10,7 @@ public class User implements Serializable {
         public User(int accountNo, String userName, String password) {
             this.accountNo = accountNo;
             this.userName = userName;
-            this.password = password;
+            this.password = password;   
         }
         
         public int getAccountNo() { return accountNo; }
