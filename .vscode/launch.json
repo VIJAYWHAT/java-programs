@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "bankMain",
+            "request": "launch",
+            "mainClass": "com.example.app/banking.bankMain"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.example.app/com.example.app.Main"
+        },
+        {
+            "type": "java",
+            "name": "app/annotition",
+            "request": "launch",
+            "mainClass": "com.example.app/annotition"
+        },
+        {
+            "type": "java",
+            "name": "polymorphism1",
+            "request": "launch",
+            "mainClass": "com.example.app/OPPS.polymorphism1"
+        },
+        {
+            "type": "java",
+            "name": "GerenicsTest",
+            "request": "launch",
+            "mainClass": "com.example.app/oops.GerenicsTest"
+        },
+        {
+            "type": "java",
+            "name": "app/Hello",
+            "request": "launch",
+            "mainClass": "com.example.app/Hello"
+        },
+        {
+            "type": "java",
+            "name": "app/generics_test",
+            "request": "launch",
+            "mainClass": "com.example.app/generics_test"
+        },
+        {
+            "type": "java",
             "name": "file_copy",
             "request": "launch",
             "mainClass": "file_copy"
