@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CreationalMagic",
+            "request": "launch",
+            "mainClass": "CreationalMagic"
+        },
+        {
+            "type": "java",
+            "name": "interface_example",
+            "request": "launch",
+            "mainClass": "interface_example"
+        },
+        {
+            "type": "java",
             "name": "Annotations",
             "request": "launch",
             "mainClass": "Annotations"
